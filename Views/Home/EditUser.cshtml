@@ -1,0 +1,75 @@
+@model Cockpit_Local.Models.Users
+@{
+    ViewData["Title"] = "EditUser";
+}
+
+
+
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post" action="EditUser" >
+    <input asp-for="ID" type="hidden">
+    <div class="form-group">
+        <label class="form-label" asp-for="UserName">User Name</label>
+        <input type="text" class="form-control" asp-for="UserName" placeholder="Enter User Name">
+    </div>
+
+    <div class="form-group">
+        <label class="form-label" asp-for="EmailID">Email Address</label>
+        <input type="email" class="form-control" asp-for="EmailID" placeholder="Enter email">
+    </div>
+
+
+    <div class="form-group">
+        <label class="form-label" asp-for="Address1">Address 1</label>
+        <input type="text" class="form-control" asp-for="Address1" placeholder="Enter Address 1">
+    </div>
+
+    <div class="form-group">
+        <label class="form-label" asp-for="Address2">Address 2</label>
+        <input type="text" class="form-control" asp-for="Address2" placeholder="Enter Address 2">
+    </div>
+
+    <div class="form-group">
+        <label class="form-label" asp-for="Country">Country</label>
+        <input type="text" class="form-control" asp-for="Country" placeholder="Enter Country">
+    </div>
+
+    <div class="form-group">
+        <label class="form-label" asp-for="State">State</label>
+        <input type="text" class="form-control" asp-for="State" placeholder="Enter State">
+    </div>
+
+    <div class="form-group">
+        <label class="form-label" asp-for="PinCode">Pincode</label>
+        <input type="text" class="form-control" asp-for="PinCode" placeholder="Enter Pincode">
+    </div>
+
+    <div class="form-group">
+        <label class="form-label" asp-for="Brand">Brand</label>
+        <input type="text" class="form-control" asp-for="Brand" placeholder="Enter Brand">
+    </div>
+
+    <div class="form-group">
+        <label class="form-label" asp-for="PhoneNumber">Phone Number</label>
+        <input type="number" class="form-control" asp-for="PhoneNumber" placeholder="Enter Phone Number">
+    </div>
+
+    <div class="form-group">
+        <label class="form-label" asp-for="CockpitRoles">Cockpit Role</label>
+        <input type="text" class="form-control" asp-for="CockpitRoles" placeholder="Enter Role">
+    </div>
+
+     <div class="form-group">
+        <label class="form-label" asp-for="Stores">Store</label>
+        <input type="text" class="form-control" asp-for="Stores" placeholder="Enter Store">
+    </div>
+
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>

@@ -1,0 +1,73 @@
+﻿@model List<Users>
+@{
+  ViewData["Title"] = "Home Page";
+}
+<div>
+  <!-- Controller: Home ; Action: AddUser-->
+  <a type="button" class="btn btn-success" asp-action="AddUser">Add</a>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">UserName</th>
+      <th scope="col">Email ID</th>
+      <th scope="col">Phone No</th>
+      <th scope="col">Address 1</th>
+      <th scope="col">Address 2</th>
+      <th scope="col">Country</th>
+      <th scope="col">State</th>
+      <th scope="col">Pincode</th>
+      <th scope="col">Brand</th>
+      <th scope="col">Store</th>
+      <th scope="col">Cockpit Role</th>
+      <th  style="colspan=2"  scope="col">Actions</th>
+    </tr>
+    @* using Microsoft.EntityFrameworkCore.Metadata.Internal; *@
+  </thead>
+  <tbody>
+    @* <tr>
+    <th scope="row">1</th>
+    <td></td>
+    <td>Otto</td>
+    <td>do</td>
+    </tr>
+    <tr>
+    <th scope="row">2</th>
+    <td>Jacob</td>
+    <td>Thornton</td>
+    <td>fat</td>
+    </tr>
+    <tr>
+    <th scope="row">3</th>
+    <td>Larry</td>
+    <td>the Bird</td>
+    <td>twitter</td>
+    </tr> *@
+
+    @foreach (var user in Model)
+    {
+      <tr>
+        <td>@user.UserName</td>
+        <td>@user.EmailID</td>
+        <td>@user.PhoneNumber</td>
+        <td>@user.Address1</td>
+        <td>@user.Address2</td>
+        <td>@user.Country</td>
+        <td>@user.State</td>
+        <td>@user.PinCode</td>
+        <td>@user.Brand</td>
+        <td>@user.Stores</td>
+        <td>@user.CockpitRoles</td>
+        <td class ="row">
+          <a type="button" class="btn btn-warning" asp-action="EditUser" asp-route-id="@user.ID">Edit</a>
+         
+        </td>
+        <td class ="row">
+         
+          <a type="button" class="btn btn-danger" asp-action="Delete"  asp-route-id="@user.ID">Delete</a>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
